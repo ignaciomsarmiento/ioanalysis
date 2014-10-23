@@ -1,8 +1,8 @@
 Package: ioanalysis
-Title: What the package does (one line)
+Title: Input-Output Analysis
 Version: 0.1
-Authors@R: "First Last <first.last@example.com> [aut, cre]"
-Description: What the package does (one paragraph)
+Authors@R: "Ignacio Sarmiento-Barbieri"" <srmntbr2@illinois.edu> [aut, cre]"
+Description: This are functions to do Input and Output Analysis. 
 Depends: R (>= 3.1.1)
-License: What license is it under?
+License: GNU GENERAL PUBLIC LICENSE
 LazyData: true
