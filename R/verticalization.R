@@ -12,7 +12,7 @@ vert.matrix<-function(IMP,X, write.xlsx=TRUE, name="Level_Verticalization.xlsx")
   u<-rbind(rep(1,nosect))
   x.i<-rowSums(X)
   vert<-(u %*%t(A) %*% X)/x.i 
-  colnames(vert)<-c("Sector", "Verticalization")
+  rownames(vert)<-c("Verticalization")
   if(write.xlsx==TRUE)write.xlsx(vert, file=name, sheetName="Sheet1", showNA=TRUE)
   t(vert)
 }
@@ -24,7 +24,7 @@ vert.matrix.leon<-function(IMP,X,L, write.xlsx=TRUE, name="Level_Verticalization
   u<-rbind(rep(1,nosect))
   x.i<-rowSums(X)
   vert<-(u %*%t(A)%*%L%*% X)/x.i 
-  colnames(vert)<-c("Sector", "Verticalization")
+  rownames(vert)<-c("Verticalization")
   if(write.xlsx==TRUE)write.xlsx(vert, file=name, sheetName="Sheet1", showNA=TRUE)
   t(vert)
 }
