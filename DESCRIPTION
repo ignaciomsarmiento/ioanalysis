@@ -1,7 +1,8 @@
 Package: ioanalysis
 Title: Input-Output Analysis
 Version: 0.1
-Authors@R: "Ignacio Sarmiento-Barbieri"" <srmntbr2@illinois.edu> [aut, cre]"
+Authors@R: person("Ignacio", "Sarmiento-Barbieri", email = "srmntbr2@illinois.edu",
+  role = c("aut", "cre"))
 Description: This are functions to do Input and Output Analysis. 
 Depends: R (>= 3.1.1)
 License: GNU GENERAL PUBLIC LICENSE
