@@ -4,10 +4,8 @@ Version: 0.1
 Authors@R: person("Ignacio", "Sarmiento-Barbieri", email = "srmntbr2@illinois.edu",
   role = c("aut", "cre"))
 Description: This are functions to do Input and Output Analysis. 
-Depends: R (>= 3.1.1)
+Depends: R (>= 3.1.1), ggplot2
 License: GNU GENERAL PUBLIC LICENSE
 LazyData: true
-devtools::use_package("devtools")
-devtools::use_package("ggplo2")  
-devtools::use_package("xlsx")    
+ 
     
