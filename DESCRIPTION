@@ -6,3 +6,7 @@ Description: This are functions to do Input and Output Analysis.
 Depends: R (>= 3.1.1)
 License: GNU GENERAL PUBLIC LICENSE
 LazyData: true
+devtools::use_package("devtools")
+devtools::use_package("ggplo2")  
+devtools::use_package("xlsx")    
+    
