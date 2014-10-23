@@ -1,0 +1,247 @@
+---
+title: 'Analisis Input-Output: Intro a R'
+output: pdf_document
+---
+
+
+#Preliminares
+
+Estas notas tratan de explicar los scripts del analisis input output. Este primero es para tratar de explicar el script `Key_Sector_Analysis.R`
+
+La primeras lineas se aseguran de borrar todo en `R`. La primera linea remueve cualquier objeto que este en la sesión y la segunda simplemente deja en blanco la pantalla (esta segunda linea es opcional)
+
+```{r eval=FALSE}
+rm(list=ls())
+cat("\014") 
+```
+
+Lo próximo es establecer el directorio donde uno esta trabajando. En mi caso es `"/Users/iki/Dropbox/Phd Illinois/Pedro IO"`. Si estas trabajando desde el pendrive en windows podria ser `"E:/Pen Drive/IOanlaysis"` por ejemplo. Es clave que sea en ese directorio donde esten los archivos y la carpeta que contiene las distintas funciones.
+
+```{r eval=FALSE}
+setwd("/Users/iki/Dropbox/Phd Illinois/Pedro IO")
+```
+
+Lo siguiente es llamar los paquetes de `R` que vamos a usar. El primero es `xlsx` que usamos para leer archivos de excel directamente. Si despues de escribir el `require(xlsx)` no lo lee hay que instalarlo usando `install.packages("xlsx")`.
+
+```{r eval=FALSE}
+require(xlsx)
+```
+
+El segundo es `ggplot2` que sirve para hacer los graficos mas presentables. Nuevamente si no está, hay que instalarlo usando `install.packages()`
+
+```{r eval=FALSE}
+require(ggplot2)
+```
+
+
+Lo próximo es cargar la función deseada en `R`; en este caso la función se llma `key.sector.R`. Para eso usamos la función `source()`. Notar que la función la llamamos desde la carpeta `Functions`.
+
+```{r eval=FALSE}
+source("Functions/key.sector.R") 
+```
+
+Esta función puede tomar varios argumentos `function(mip, X.j, key=TRUE, cutoff=1, write.xlsx=TRUE, name="Key_sector.xlsx")`
+
+* `mip` en este argumento va la matriz insumo producto
+* `X.j` va el vector de producto o insumo. La dimension de las filas debe coincidir con las columnas de `mip`
+* `key=TRUE` identifica los sectores con un `cutoff=1` y separa en 4 cuadrantes. El primer cuadrante,  donde el Backward and Forward Links son mayores que el cutoff lo llama `"Key"` y de la misma forma los cuadrantes restantes nombrandolos `"II"`, `"III"` y "`IV`". Si por el contrario esta opcion se encuentra en `FALSE` entonces el output es solamente los vectores de Backward and Forward Linkages
+* `cutoff=1` establece el punto de corte para identificar los factores claves. El default es uno.
+* `write.xlsx=TRUE` da la opción de escribir un archivo de excel. El default esta seteado a verdadero, es decir si no se especifica el argumento escrive el archivo de excel y lo nombra `"Key_sector.xlsx"`
+* `name` funciona solo si `write.xlsx` es `TRUE` y es el nombre que que uno le quiere dar al archivo de Excel. El default es `"Key_sector.xlsx"`
+
+Hay que aclarar tambien que la función asume que los sectores estan ordenados numericamente en la MIP, ya que les asigna el numero de sector basado en el ordenamiento con el que la matrix `mip` viene.
+
+```{r eval=FALSE}
+source("Functions/key.sector.diff.R") 
+```
+
+Otra función en caso que el vector de input y ouput difieran es `key.sector.diff.R`. Esta función es igual a la anterior, pero toma un argumento extra que es el vector de insumos. Los argumentos son `function(mip, X.j, X.i, key=TRUE, cutoff=1, write.xlsx=TRUE, name="Key_sector.xlsx")`
+
+* `mip` en este argumento va la matriz insumo producto
+* `X.j` va el vector de insumos. La dimension de las filas debe coincidir con las columnas de `mip`
+* `X.i` va el vector de producto. La dimension de las columas debe coincidir con las filas de `mip`
+* `key=TRUE` identifica los sectores con un `cutoff=1` y separa en 4 cuadrantes. El primer cuadrante,  donde el Backward and Forward Links son mayores que el cutoff lo llama `"Key"` y de la misma forma los cuadrantes restantes nombrandolos `"II"`, `"III"` y "`IV`". Si por el contrario esta opcion se encuentra en `FALSE` entonces el output es solamente los vectores de Backward and Forward Linkages
+* `cutoff=1` establece el punto de corte para identificar los factores claves. El default es uno.
+* `write.xlsx=TRUE` da la opción de escribir un archivo de excel. El default esta seteado a verdadero, es decir si no se especifica el argumento escrive el archivo de excel y lo nombra `"Key_sector.xlsx"`
+* `name` funciona solo si `write.xlsx` es `TRUE` y es el nombre que que uno le quiere dar al archivo de Excel. El default es `"Key_sector.xlsx"`
+
+
+
+Con estos pasos previos estamos listos para hacer el analisis.
+
+# Matriz 40x40
+
+Lo primero que hacemos es leer los datos de excel. Notar que el nombre del archivo es `"MIP 124 a 40x40_2.xlsx"` que tiene que estar ubicado en el directorio que estamos trabajando y que seteamos al principio. Lo siguiente a notar es que la hoja de Excel donde esta la matriz que deseamos se llama `"MIP 40x40 a precios basicos"`. La última opción `header=T` le dice a `R` que la primera linea es el nombre de los sectores. Notar ademas que el nombre que le asignamos en `R` es `data`.
+
+```{r eval=FALSE}
+data<-read.xlsx("MIP 124 a 40x40_2.xlsx", sheetName = "MIP 40x40 a precios basicos", header=T)
+```
+
+Con el comando `View()` podemos ver los datos que acabamos de cargar.
+
+```{r eval=FALSE}
+View(data)
+```
+
+Con el comando `names` se puede obtener los nombres de las columnas del objeto.
+
+```{r eval=FALSE}
+names(data)
+```
+
+Lo siguiente es obtener del objeto `data` los datos que nos interesa. Primero obtenemos la Matriz Insumo Producto
+
+```{r eval=FALSE}
+MIP<-data.frame(data[1:40,2:41]) 
+```
+
+Para eso le asignamos al objeto `MIP` y le indicamos que es del tipo `data.frame` y que corresponde a las filas 1 a 40 y de la columna 2 a 41.
+
+Lo siguiente es encontrar el vector de output. En este caso en el objeto `data` el ouput se encuentra en la columna llamada `X.DT.a.PB`. Entonces asignamos al objeto `output`, la columna de data llamada `X.DT.a.PB` desde la primera fila a la 40: `data$X.DT.a.PB[1:40]`. Ademas lo convertimos en un vector, que se logra con la función `as.matrix()`
+
+```{r eval=FALSE}
+output<-as.matrix(data$X.DT.a.PB[1:40])
+```
+
+Lo siguiente es checkear las dimensiones de las matrices
+```{r eval=FALSE}
+dim(MIP)
+dim(output)
+```
+
+Las clave es que sean conformables para el producto. La dimension de las columnas de `MIP` debe coincidir con la de las filas de `output`.
+
+Una vez que tenemos todos los elementos podemos correr la función `key.sector`
+
+```{r eval=FALSE}
+b_40x40<-key.sector(MIP,output,write.xlsx=TRUE, name="Key_sector_40x40.xlsx")
+View(b_40x40)
+```
+
+En este caso asignamos el resultado de la función al objeto `b_40x40`. Los argumentos de la funcion son las matricies `MIP`, `output`. El argumento `write.xlsx=TRUE` le dice a la función que escriba un archivo de excel en el directorio que se esta trabajando con el nombre dado por `name="Key_sector_40x40.xlsx"`. Si `write.xlsx=FALSE` no se escribe el archivo de excel.
+
+Por curiosidad uno puede quedarse con aquellos sectores llamados `Key`, para ello usamos la opción `which` y con la función `View()` vemos el resultado
+
+```{r eval=FALSE}
+y_40x40<-b_40x40[which(b$key=='Key'),]
+View(y_40x40)
+```
+
+Finalmente es interesante ver los resultados en un grafico. Lo primero es establecer el cutoff para dividir los cuadrantes, lo que hacemos con `cutoff<-1`. Luego creamos una variable llamada `cond` que divide los cuatro cuadrantes y los nombra "I", "II", "III' y "IV". Esto es identico que lo que hace la función `key.sector()` con la opción `key=TRUE`. 
+
+
+```{r eval=FALSE}
+#conditions for the plot
+cutoff<-1
+cond<-ifelse(b_40x40$Forward>=cutoff&b_40x40$Backward>=cutoff,"I",
+             ifelse(b_40x40$Forward>=cutoff&b_40x40$Backward<cutoff,"II",
+                    ifelse(b_40x40$Forward<cutoff&b_40x40$Backward>=cutoff,"III","IV")))
+```
+
+Con esto listo podemos hacer el `ggplot`. Primero especificamos como queremos guardar el gráfico, en este caso queremos que guarde como un pdf llamado `"Quadrants_40x40.pdf"`. De alli llamamos la funcion cuyos argumentos son `b_40x40[c("Backward Linkage", "Forward Linkage")])` que indica que queremos que grafique las columnas llamadas "Backward Linkage" y "Forward Linkage" en el objeto `b_40x40`. Que la estetica `x=Backward.Linkage`, `y=Forward.Linkage` y los colores estan dados por la variable `cond` que creamos previamente. El resto agrega una linea horizontal en `cutoff`, una vertical en el mismo lugar, mas etiquetas para los ejes. 
+Finalmente, hay que cerrar el grafico para que sea guardado correctamente con `dev.off()`.
+
+```{r eval=FALSE}
+pdf("Quadrants_40x40.pdf")
+ggplot(data.frame(b_40x40[c("Backward Linkage", "Forward Linkage")]), 
+       aes(x=Backward.Linkage, y=Forward.Linkage, color=cond)) 
+        + geom_point(shape=1) +geom_hline(yintercept = cutoff) +geom_vline(xintercept = cutoff)
+        + xlab("Backward Linkage") + ylab("Forward Linkage")
+dev.off()
+```
+
+
+# Matriz 124x124
+
+Nuevamente leemos el archivo de excel. En este caso tiene un para de opciones mas que tienen que ver con leer mejor el archivo.
+El archivo de excel se llama `"Matriz2004_ARG e Importaciones_3.xlsx"` y esta en el directorio de trabajo especificado al inicio. La hoja de Excel es `"Matriz 2004 "`. `fileEncoding` permite que `R` pueda leer las tildes.
+
+```{r eval=FALSE}
+#Reads the MIP
+data<-read.xlsx("Matriz2004_ARG e Importaciones_3.xlsx", sheetName = "Matriz 2004 ", 
+                fileEncoding="latin1", stringAsFactors=FALSE) 
+```
+
+
+Despues que lee este archivo la primera columna no tiene nombre. Para remediar tal situación le pongo el nombre sector con la siguiente linea.
+
+```{r eval=FALSE}
+names(data)[names(data) == 'NA..1']<-"Sector"  #Add the name "Sector" to the first column
+names(data)
+```
+
+Con `names(data)` puedo ver los nombres de las columnas. Ademas borro un par de columnas que están de más
+
+```{r eval=FALSE}
+data$X.1<-NULL
+data$NA.<-NULL
+```
+
+Nuevamente creamos el objeto `MIP` pero en este caso de 124x124 y el output de 1:124. Notar que aca la columna que contiene el output se llama `DT.a.PB`
+
+```{r eval=FALSE}
+MIP<-data.frame(data[1:124,2:125]) 
+output<-as.matrix(data$DT.a.PB[1:124])
+dim(output)
+dim(MIP)
+```
+
+Hacemos el análisis nuevamente y guardamos el output en un archivo llamado `"Key_sector_124x124.xlsx"`.
+
+```{r eval=FALSE}
+b_124x124<-key.sector(MIP,output,write.xlsx=TRUE, name="Key_sector_124x124.xlsx")
+View(b_124x124)
+y_124x124<-b[which(b$key=='Key'),]
+View(y_124x124)
+```
+
+
+Al igual que con la otra matriz hacemos el gráfico y lo llamamos `"Quadrants_124x124.pdf"`
+
+```{r eval=FALSE}
+cutoff<-1
+cond<-ifelse(b_124x124$Forward>=cutoff&b_124x124$Backward>=cutoff,"I",
+             ifelse(b_124x124$Forward>=cutoff&b_124x124$Backward<cutoff,"II",
+                    ifelse(b_124x124$Forward<cutoff&b_124x124$Backward>=cutoff,"III","IV")))
+
+pdf("Quadrants_124x124.pdf")
+ggplot(data.frame(b_124x124[c("Backward Linkage", "Forward Linkage")]), 
+       aes(x=Backward.Linkage, y=Forward.Linkage, color=cond))
+        + geom_point(shape=1) +geom_hline(yintercept = cutoff) +geom_vline(xintercept = cutoff)
+        + xlab("Backward Linkage") + ylab("Forward Linkage")
+dev.off()
+```
+
+
+# Inversa de Leontief y de Gosh
+
+Hay dos funciones más, una que computa la inversa de Leontief y el vector de Backward Linkage, y otra que computa la inversa de Gosh con el correspondiente vector de Forward Linkage. Para llamarlas se usa nuevamente la función  `source()`
+
+
+```{r eval=FALSE}
+source("Functions/leontief.inv.R") 
+```
+
+Esta función computa la inversa de Leontief y el vector de Backward Linkage. Toma 3 argumentos `function(mip, X.j, write.xlsx=TRUE)`
+
+* `mip` en este argumento va la matriz insumo producto
+* `X.j` va el vector de insumo. La dimension de las filas debe coincidir con las columnas de `mip`
+* `write.xlsx=TRUE` da la opción de escribir un archivo de excel. El default esta seteado a verdadero, es decir si no se especifica el argumento escrive el archivo de excel y lo nombra `"Leontief_Inv.xlsx"`
+* `name` funciona solo si `write.xlsx` es `TRUE` y es el nombre que que uno le quiere dar al archivo de Excel. El default es `"Leontief_Inv.xlsx"`
+
+
+
+```{r eval=FALSE}
+source("Functions/gosh.inv.R") 
+```
+
+Esta función computa la inversa de Gosh y el vector de Forward Linkage. Toma 3 argumentos `function(mip, X.i, write.xlsx=TRUE)`
+
+* `mip` en este argumento va la matriz insumo producto
+* `X.i` va el vector de producto. La dimension de las filas debe coincidir con las columnas de `mip`
+* `write.xlsx=TRUE` da la opción de escribir un archivo de excel. El default esta seteado a verdadero, es decir si no se especifica el argumento escrive el archivo de excel y lo nombra `"Gosh_Inv.xlsx"`
+* `name` funciona solo si `write.xlsx` es `TRUE` y es el nombre que que uno le quiere dar al archivo de Excel. El default es `"Gosh_Inv.xlsx"`
+
+
+
+
