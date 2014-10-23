@@ -8,14 +8,14 @@ Leontief Inverse
 Computes the Leontief Inverse and the Backward Linkage
 }
 \usage{
-leontief.inv(mip,X.j,write.xlsx,name)
+leontief.inv(mip,X.j,write.xlsx=TRUE,name="Leontief_Inv.xlsx")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{mip}{input output matrix}
-  \item{X.j}{input in each column}
-  \item{write.xlsx}{writes an excel file, default=TRUE}
-  \item{name}{name of the excel file, default="Leontief_Inv.xlsx"}
+  \item{mip}{matrix. input output matrix}
+  \item{X.j}{vector. input in each column}
+  \item{write.xlsx}{logical. if TRUE writes an excel file}
+  \item{name}{string. name of the excel file}
 }
 \details{
 The Leontief inverse is derived from the input-output table $A=[a_{ij}$ where
