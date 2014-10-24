@@ -2,7 +2,7 @@ Package: ioanalysis
 Title: Input-Output Analysis
 Version: 0.1
 Authors@R: person("Ignacio", "Sarmiento-Barbieri", email = "srmntbr2@illinois.edu",
-  role = c("aut", "cre"))
+  role = c("aut", "cre")) 
 Author: Ignacio Sarmiento-Barbieri
 Maintainer: Ignacio Sarmiento-Barbieri <srmntbr2@illinois.edu>
 Description: Input and Output Analysis. 
