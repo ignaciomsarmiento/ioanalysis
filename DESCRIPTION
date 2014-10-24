@@ -3,7 +3,9 @@ Title: Input-Output Analysis
 Version: 0.1
 Authors@R: person("Ignacio", "Sarmiento-Barbieri", email = "srmntbr2@illinois.edu",
   role = c("aut", "cre"))
-Description: This are functions to do Input and Output Analysis. 
+Author: Ignacio Sarmiento-Barbieri
+Maintainer: Ignacio Sarmiento-Barbieri <srmntbr2@illinois.edu>
+Description: Input and Output Analysis. 
 Depends: R (>= 3.1.1), ggplot2, xlsx
 License: GNU GENERAL PUBLIC LICENSE
 LazyData: true
