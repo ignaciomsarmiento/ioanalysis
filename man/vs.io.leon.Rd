@@ -22,7 +22,7 @@ vs.io(imp,exp,leon,namesector, write.xlsx=TRUE, name="Level_Verticalization.xlsx
   \item{name}{String. name of the excel file}
 %%     ~~Describe \code{x} here~~
 }
-}
+
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 }
