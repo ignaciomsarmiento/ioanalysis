@@ -10,7 +10,7 @@ VS share of total exports= VS/Xk=A*X/Xk
 where A is the nxn imported coefficient matrix, X is an nx1 vector of exports, n is the number of secotrs, adn Xk is the sum of exports across the n sectors. Elements a_ij of A denotes the imported inputs from sector i used to produce one unit of sectors j output.
 }
 \usage{
-vs.io(imp,exp,namesector, write.xlsx=TRUE, name="Level_Verticalization.xlsx"){
+vs.io(imp,exp,namesector, write.xlsx=TRUE, name="Level_Verticalization.xlsx")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
