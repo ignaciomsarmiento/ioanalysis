@@ -12,16 +12,16 @@ leontief.inv(mip,X.j,write.xlsx=TRUE,name="Leontief_Inv.xlsx")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{mip}{matrix. input output matrix}
-  \item{X.j}{vector. input in each column}
-  \item{write.xlsx}{logical. if TRUE writes an excel file}
-  \item{name}{string. name of the excel file}
+  \item{mip}{Matrix. Input output matrix}
+  \item{X.j}{Vector. Input in each column}
+  \item{write.xlsx}{Logical. if TRUE writes an excel file}
+  \item{name}{String. name of the excel file}
 }
 \details{
-The Leontief inverse is derived from the input-output table \equation{A=[a_{ij}} where
-$$ a_{ij}=\frac{z_{ij}}{X_{j}} $$
+The Leontief inverse is derived from the input-output table A=[a_ij] where
+ a_ij=z_ij/X_j
 
-where $z_{ij} is the input from $i$ required in the production of $j$. $X_{j}$ is the corresponding input in each coulumn. The leontief inverse is then computed as $(I-A)^{-1}$
+where z_ij is the input from i required in the production of j. X_j is the corresponding input in each coulumn. The leontief inverse is then computed as (I-A)^(-1)
 
 Falta describir Backward Linkage
 }
@@ -36,7 +36,7 @@ Falta describir Backward Linkage
 Nazara, Guo, Hewing and Dridi (2003). \emph{PyIO. Input-Output Analysis with Python}. \url{http://www.real.illinois.edu/pyio/} 
 }
 \author{
-Ignacio Sarmiento-Baribier
+Ignacio Sarmiento-Barbieri
 }
 \note{
 %%  ~~further notes~~
