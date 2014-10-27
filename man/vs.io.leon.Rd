@@ -27,8 +27,7 @@ vs.io(imp,exp,leon,namesector, write.xlsx=TRUE, name="Level_Verticalization.xlsx
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-  \item{returns a data frame with the A*L*X product, the total exports and the level of verticalization for each sector}
-  \item{total.exp. returns a scalar, equals to the sum of exports across secotrs}
+  Returns a data frame with the A*L*X product, the total exports and the level of verticalization for each sector. Total.exp. returns a scalar, equals to the sum of exports across sectors
 }
 \references{
 Hummels, David & Ishii, Jun & Yi, Kei-Mu, 2001. "The nature and growth of vertical specialization in world trade," Journal of International Economics, Elsevier, vol. 54(1), pages 75-96, June.
