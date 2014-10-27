@@ -19,7 +19,7 @@ vs.ki(imp,exp,out,namesector, write.xlsx=TRUE, name="Level_Verticalization.xlsx"
   \item{write.xlsx}{Logical. if TRUE writes an excel file}
   \item{name}{String. name of the excel file}
 }
-}
+
 \details{
 The dimension of the four arguments must coincide. 
 }
