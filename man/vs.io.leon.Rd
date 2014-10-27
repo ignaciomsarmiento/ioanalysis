@@ -1,5 +1,5 @@
-\name{vs.io}
-\alias{vs.io}
+\name{vs.io.leon}
+\alias{vs.io.leon}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 VS share of total exports
