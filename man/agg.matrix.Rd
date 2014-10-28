@@ -13,7 +13,7 @@ agg.matrix<-function(mat,d.mip)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{mat}{Matrix. How sectors should be agregated. First column should be the new sector in order, the remaining columns the sectors that are foing to be agregated}
-  \item{d.imp}{the respective dimension of the matrix that is going to be agregated}
+  \item{dimcol}{Numeric. Column dimension}
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
