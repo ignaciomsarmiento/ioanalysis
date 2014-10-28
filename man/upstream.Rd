@@ -18,7 +18,6 @@ upstream(linv,y,x,m, write.xlsx=TRUE, name="Upstream.xlsx")
   \item{write.xlsx}{Logical. if TRUE writes an excel file}
   \item{name}{String. name of the excel file}
 }
-}
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 }
