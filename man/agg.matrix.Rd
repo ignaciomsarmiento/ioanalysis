@@ -8,7 +8,8 @@ Aggregation Matrix
 Aggregates Inpuy-Output Matrices. Construct an agregation matrix of kxn dimension. 
 }
 \usage{
-agg.matrix<-function(mat,d.mip){
+agg.matrix<-function(mat,d.mip)
+}
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{mat}{Matrix. How sectors should be agregated. First column should be the new sector in order, the remaining columns the sectors that are foing to be agregated}
@@ -40,7 +41,6 @@ Ignacio Sarmiento-Barbieri
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-
 temp<-matrix(sample(1:40), 14)
 temp[,1]<-seq(1:14)
 S<-agg.matrix(temp,40)
