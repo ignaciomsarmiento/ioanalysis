@@ -43,7 +43,7 @@ Ignacio Sarmiento-Barbieri
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-See Also  \code{\link{leontief.inv}}, ~~~
+See Also  \code{\link{leontief.inv}}
 }
 \examples{
 #Uses the 40x40 matrix included in the package
