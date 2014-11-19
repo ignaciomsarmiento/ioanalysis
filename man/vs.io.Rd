@@ -5,7 +5,11 @@
 VS share of total exports
 }
 \description{
+<<<<<<< HEAD
 Vertical Specialization (VS) share of total exports. The formula for VS as a share fo total exports for country k is
+=======
+VS share of total exports. The formula for VS as a share fo total exports for country k is
+>>>>>>> bfb2997d378649495f3208d224fc08cea48b7a27
 VS share of total exports= VS/Xk=A*L*X/Xk
 where A is the nxn imported coefficient matrix,L is the Leontief inverse, X is an nx1 vector of exports, n is the number of secotrs, adn Xk is the sum of exports across the n sectors. 
 }
