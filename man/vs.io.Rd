@@ -7,7 +7,7 @@ VS share of total exports
 \description{
 
 Vertical Specialization (VS) share of total exports. The formula for VS as a share fo total exports for country k is
-\deqn{VS share of total exports= VS/Xk=A*L*X/Xk}
+\deqn{VS\; share\; of\; total\; exports= \frac{VS}{X_{k}}=\frac{A*L*X}{X_{k}}}
 where A is the nxn imported coefficient matrix,L is the Leontief inverse, X is an nx1 vector of exports, n is the number of secotrs, adn Xk is the sum of exports across the n sectors. 
 }
 \usage{
