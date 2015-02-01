@@ -1,8 +1,9 @@
-key.sector<-function(mip, X.j, key=TRUE, cutoff=1, write.xlsx=TRUE, name="Key_sector.xlsx"){
-  if(dim(mip)[2]!=dim(X.j)[1])stop("check dimensions")
+key.sector<-function(mip, X, epsilon=0.1, key=TRUE, cutoff=1, write.xlsx=TRUE, name="Key_sector.xlsx"){
+  if(class(mip)!=matrix) mip<-as.matrix(mip)
+  if(class(X)!=matrix) X<-as.matrix(X)
   nosect<-length(X.j)
-  for (i in 1:nosect) if (X.j[i]==0) X.j[i]=0.1
-  aij=mip/X.j
+  for (i in 1:nosect) if (X[i]==0) X[i]=epsilon
+  aij=mip/X
   bij_leon<-data.frame(solve(diag(nosect)-aij))
   V<-sum(bij_leon)/nosect
   b.j<-rowSums(bij_leon)
