@@ -7,20 +7,15 @@ Impact Analysis: Backward and Forward linkages
 \description{
 
 Computation of Backward and Forward linkages. It aims to identify thos secotrs whose economic activity exerts a greater than average influence on the whole economy. Key sectors are identified by calculating backard and forward linkages. 
-Let B=(I-A)^{-1}=[b_{ij}]
-  be the Leontief inverse matrix and let B_{j}
-  and B_{i}
-  be the column and row multipliers of this Leontief inverse. The sector j's backward linkage (BL_{j}
- ) and forward linkage (FL_{i}
- ) are defined as:
+Let \deqn{B=(I-A)^{-1}=[b_{ij}]} be the Leontief inverse matrix and let \deqn{B_{j}} and \deqn{B_{i}} be the column and row multipliers of this Leontief inverse. The sector j's backward linkage (\deqn{BL_{j}}) and forward linkage (\deqn{FL_{i}}) are defined as:
 
-BL_{j}=\frac{\frac{1}{n}\sum_{i=1}^{n}b_{ij}}{\frac{1}{n^{2}}\sum_{j=1}^{n}\sum_{i=1}^{n}b_{ij}}
+\deqn{BL_{j}=\frac{\frac{1}{n}\sum_{i=1}^{n}b_{ij}}{\frac{1}{n^{2}}\sum_{j=1}^{n}\sum_{i=1}^{n}b_{ij}}}
  
 
-FL_{i}=\frac{\frac{1}{n}\sum_{j=1}^{n}b_{ij}}{\frac{1}{n^{2}}\sum_{j=1}^{n}\sum_{i=1}^{n}b_{ij}}
+\deqn{FL_{i}=\frac{\frac{1}{n}\sum_{j=1}^{n}b_{ij}}{\frac{1}{n^{2}}\sum_{j=1}^{n}\sum_{i=1}^{n}b_{ij}}}
  
 
-The usual interpretation is to propose that, if BL_{j}>1, a unit change in final demand in sector j will generate an above-average increase in activity in the economy. Similarly, for FL_{i}>1, it is asserted that a unit change in all sector's final demand would create an above average increase in sector i. Thus, a key sector is identified as one having both indices grater than one.
+The usual interpretation is to propose that, if \deqn{BL_{j}>1}, a unit change in final demand in sector j will generate an above-average increase in activity in the economy. Similarly, for \deqn{FL_{i}>1}, it is asserted that a unit change in all sector's final demand would create an above average increase in sector i. Thus, a key sector is identified as one having both indices grater than one.
 }
 
 \usage{
