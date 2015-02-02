@@ -7,7 +7,7 @@ Impact Analysis: Backward and Forward linkages
 \description{
 
 Computation of Backward and Forward linkages. It aims to identify thos secotrs whose economic activity exerts a greater than average influence on the whole economy. Key sectors are identified by calculating backard and forward linkages. 
-Let \deqn{B=(I-A)^{-1}=[b_{ij}]} be the Leontief inverse matrix and let \deqn{B_{j}} and \deqn{B_{i}} be the column and row multipliers of this Leontief inverse. The sector j's backward linkage (\deqn{BL_{j}}) and forward linkage (\deqn{FL_{i}}) are defined as:
+Let \deqn{B=(I-A)^{-1}=[b_{ij}]} be the Leontief inverse matrix and let \eqn{B_{j}} and \eqn{B_{i}} be the column and row multipliers of this Leontief inverse. The sector j's backward linkage (\eqn{BL_{j}}) and forward linkage (\eqn{FL_{i}}) are defined as:
 
 \deqn{BL_{j}=\frac{\frac{1}{n}\sum_{i=1}^{n}b_{ij}}{\frac{1}{n^{2}}\sum_{j=1}^{n}\sum_{i=1}^{n}b_{ij}}}
  
@@ -19,7 +19,7 @@ The usual interpretation is to propose that, if \deqn{BL_{j}>1}, a unit change i
 }
 
 \usage{
-key.sector(mip, X, epsilon=0.1, key=TRUE, cutoff=1, write.xlsx=TRUE, name="Key_sector.xlsx"){
+key.sector(mip, X, epsilon=0.1, key=TRUE, cutoff=1, write.xlsx=TRUE, name="Key_sector.xlsx")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -34,13 +34,13 @@ key.sector(mip, X, epsilon=0.1, key=TRUE, cutoff=1, write.xlsx=TRUE, name="Key_s
 }
 
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+The function takes the sector names from the column names of the Input-output matrix
 }
 \value{
   Returns a vector with the calculated Backward and Forward linkages for each sector
 }
 \references{
-Nazara, Suahasil & Guo, Dong & Hewings, Geoffrey J.D., & Dridi, Chokri, 2003. "PyIO. Input-Output Analysis with Python. REAL Discussion Paper 03-T-23. University of Illinois at Urbana-Champaign. (\href{http://www.real.illinois.edu/d-paper/03/03-T-23.pdf})
+Nazara, Suahasil & Guo, Dong & Hewings, Geoffrey J.D., & Dridi, Chokri, 2003. "PyIO. Input-Output Analysis with Python". REAL Discussion Paper 03-T-23. University of Illinois at Urbana-Champaign. (\href{http://www.real.illinois.edu/d-paper/03/03-T-23.pdf})
 }
 \author{
 Ignacio Sarmiento-Barbieri
@@ -58,7 +58,7 @@ See Also  \code{\link{leontief.inv}} \code{\link{gosh.inv}}
 \examples{
 #Uses the 40x40 matrix included in the package
 
-mip<-mat_40x40[2:41,1:40] #Input-output coeffcients
+mip<-mat_40x40[1:40,2:41] #Input-output coeffcients
 X<-mat_40x40$DT.a.PB[1:40]  #Total output vector
 
 key<-key.sector(mip,X, key=FALSE, write.xlsx=FALSE)
