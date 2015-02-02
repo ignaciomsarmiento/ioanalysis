@@ -40,7 +40,7 @@ The function takes the sector names from the column names of the Input-output ma
   Returns a vector with the calculated Backward and Forward linkages for each sector
 }
 \references{
-Nazara, Suahasil & Guo, Dong & Hewings, Geoffrey J.D., & Dridi, Chokri, 2003. "PyIO. Input-Output Analysis with Python". REAL Discussion Paper 03-T-23. University of Illinois at Urbana-Champaign. (\href{http://www.real.illinois.edu/d-paper/03/03-T-23.pdf})
+Nazara, Suahasil & Guo, Dong & Hewings, Geoffrey J.D., & Dridi, Chokri, 2003. "PyIO. Input-Output Analysis with Python". REAL Discussion Paper 03-T-23. University of Illinois at Urbana-Champaign. (\url{http://www.real.illinois.edu/d-paper/03/03-T-23.pdf})
 }
 \author{
 Ignacio Sarmiento-Barbieri

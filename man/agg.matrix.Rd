@@ -26,7 +26,7 @@ agg.matrix<-function(mat,d.mip)
 %% ...
 }
 \references{
-Nazara, Guo, Hewing and Dridi (2003). \emph{PyIO. Input-Output Analysis with Python}. \url{http://www.real.illinois.edu/pyio/} 
+Nazara, Suahasil & Guo, Dong & Hewings, Geoffrey J.D., & Dridi, Chokri, 2003. "PyIO. Input-Output Analysis with Python". REAL Discussion Paper 03-T-23. University of Illinois at Urbana-Champaign. (\url{http://www.real.illinois.edu/d-paper/03/03-T-23.pdf})
 }
 \author{
 Ignacio Sarmiento-Barbieri
