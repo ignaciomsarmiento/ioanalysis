@@ -74,9 +74,6 @@ multipliers<-function(mip, X, z, e,write.xlsx=TRUE, name="output_multiplier.xlsx
   a<-z/X
   a<-as.matrix(a)
   a<-t(a)
-  B<-leontief.inv(mip, X, write.xlsx=FALSE)
-  B<-B[,!(colnames(B)=="Backward Linkage")]
-  B<-as.matrix(B)
   if(dim(a)[2]!=dim(B)[1])("Check dimensions z, X and MIP")
   H<-a%*%B
   H<-t(H)

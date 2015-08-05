@@ -1,5 +1,5 @@
-\name{key.sector}
-\alias{key.sector}
+\name{multipliers}
+\alias{multipliers}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Multiplier Analysis
@@ -26,7 +26,7 @@ Employment multiplier: the calculation of this multiplier requires a sectoral em
 
 with the Leontief inverse, the employment  multiplier for sector j is
 
-\deqn{E_{j}=\sum_{i=1}^{n}a_{n+1,i}b_{ij}}
+\deqn{E_{j}=\sum_{i=1}^{n}w_{n+1,i}b_{ij}}
 
 }
 
@@ -68,7 +68,7 @@ See Also  \code{\link{leontief.inv}} \code{\link{gosh.inv}}
 }
 \examples{
 #Uses the 40x40 matrix included in the package
-data<-load("data/mat_40x40.Rda")
+
 mip<-mat_40x40[1:40,2:41] #Input-output coeffcients
 X<-as.matrix(mat_40x40$DT.a.PB[1:40])  #Total output vector
 
@@ -82,5 +82,5 @@ multipliers<-multipliers(mip,X,z=z,e=e, write.xlsx=FALSE)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ key sector }
+\keyword{ multipliers }
 
