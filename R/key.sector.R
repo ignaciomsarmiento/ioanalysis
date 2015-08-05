@@ -1,4 +1,3 @@
-
 key.sector<-function(mip, X, epsilon=0.1, key=TRUE, cutoff=1, write.xlsx=TRUE, name="Key_sector.xlsx"){
   if(class(mip)!="matrix") mip<-as.matrix(mip)
   if(class(X)!="numeric") X<-as.vector(X)

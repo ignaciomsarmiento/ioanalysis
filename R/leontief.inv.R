@@ -4,7 +4,7 @@ leontief.inv<-function(mip, X.j, write.xlsx=TRUE, name="Leontief_Inv.xlsx"){
   #where Ad is the input coefficient matrix of domestic transactions. 
   #I is a diagonal matrix
   if(dim(mip)[2]!=dim(X.j)[1])stop("check dimensions")
-  nosect<-length(X.j)
+  nosect<-dim(X.j)[1]
   for (i in 1:nosect) if (X.j[i]==0) X.j[i]=0.1
   aij=mip/X.j
   bij<-data.frame(solve(diag(nosect)-aij))

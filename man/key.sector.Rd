@@ -6,7 +6,7 @@ Impact Analysis: Backward and Forward linkages
 }
 \description{
 
-Computation of Backward and Forward linkages. It aims to identify thos secotrs whose economic activity exerts a greater than average influence on the whole economy. Key sectors are identified by calculating backard and forward linkages. 
+Computation of Backward and Forward linkages. It aims to identify thos sectors whose economic activity exerts a greater than average influence on the whole economy. Key sectors are identified by calculating backard and forward linkages. 
 Let \deqn{B=(I-A)^{-1}=[b_{ij}]} be the Leontief inverse matrix and let \eqn{B_{j}} and \eqn{B_{i}} be the column and row multipliers of this Leontief inverse. The sector j's backward linkage (\eqn{BL_{j}}) and forward linkage (\eqn{FL_{i}}) are defined as:
 
 \deqn{BL_{j}=\frac{\frac{1}{n}\sum_{i=1}^{n}b_{ij}}{\frac{1}{n^{2}}\sum_{j=1}^{n}\sum_{i=1}^{n}b_{ij}}}
