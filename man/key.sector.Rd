@@ -34,7 +34,7 @@ key.sector(mip, X, epsilon=0.1, key=TRUE, cutoff=1, write.xlsx=TRUE, name="Key_s
 }
 
 \details{
-The function takes the sector names from the column names of the Input-output matrix
+The function takes the sector names from the column names of the Input-output matrix. If \code{key=TRUE} it orders the sectors first by the Backward Linkage and second by Forward Linkage
 }
 \value{
   Returns a vector with the calculated Backward and Forward linkages for each sector
@@ -53,12 +53,13 @@ Ignacio Sarmiento-Barbieri
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-See Also  \code{\link{leontief.inv}} \code{\link{gosh.inv}}
+See Also  \code{\link{leontief.inv}} 
 }
 \examples{
 #Uses the 40x40 matrix included in the package
 
 mip<-mat_40x40[1:40,2:41] #Input-output coeffcients
+
 X<-mat_40x40$DT.a.PB[1:40]  #Total output vector
 
 key<-key.sector(mip,X, key=FALSE, write.xlsx=FALSE)

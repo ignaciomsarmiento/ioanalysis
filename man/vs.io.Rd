@@ -59,7 +59,7 @@ class(namesector) #character
 hum<-vs.io(imp,exp,namesector, write.xlsx=FALSE)
 
 #Using the Leontief Inverse
-leon<-leontief.inv(mat_40x40[1:40,2:41], as.matrix(mat_40x40$DT.a.PB[1:40]))[,1:40]
+leon<-leontief.inv(mat_40x40[1:40,2:41], mat_40x40$DT.a.PB[1:40])[,1:40]
 hum2<-vs.io(imp,exp,namesector,leon=leon, write.xlsx=FALSE)
 
 
