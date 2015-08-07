@@ -8,9 +8,9 @@ Field of Influence
 Computes the first order field of Influence
 }
 \usage{
-influence(mip,X, col,row, write.xlsx=FALSE, name="Field_of_Influence.xlsx"){
+influence(mip,X, col,row, write.xlsx=FALSE, name="Field_of_Influence.xlsx")
 }
-%- maybe also 'usage' for other objects documented here.
+
 \arguments{
   \item{mip}{Matrix. Input output matrix}
   \item{X}{Vector. Input in each column}
@@ -19,6 +19,7 @@ influence(mip,X, col,row, write.xlsx=FALSE, name="Field_of_Influence.xlsx"){
   \item{write.xlsx}{Logical. If TRUE writes an excel file}
   \item{name}{String. Name of the excel file}
 }
+
 \details{
 The Field of influence assesses the changes in the Leontief inverse matrix resulting from the change in one or more direct input coefficients in the inverse Leontief matrix. 
 
@@ -31,6 +32,7 @@ Returns a matrix.
 Nazara, Suahasil & Guo, Dong & Hewings, Geoffrey J.D., & Dridi, Chokri, 2003. \emph{PyIO. Input-Output Analysis with Python}. REAL Discussion Paper 03-T-23. University of Illinois at Urbana-Champaign. (\url{http://www.real.illinois.edu/d-paper/03/03-T-23.pdf})
 
 }
+
 \author{
 Ignacio Sarmiento-Barbieri
 }
@@ -38,6 +40,7 @@ Ignacio Sarmiento-Barbieri
 \seealso{
 See Also  \code{\link{leontief.inv}}
 }
+
 \examples{
 #Follows the example in PyIO 2.0 Quick Start
 

@@ -24,7 +24,7 @@ The Goshian inverse is derived from the output allocation matrix table A=[a_ij] 
 where z_ij is the input from i required in the production of j. X_i is the corresponding output in each row. The Goshian inverse is then computed as 
 \deqn{(I-A)^{-1}}
 
-
+}
 \value{
 Returns a data.frame with the Goshian Inverse
 }
@@ -36,15 +36,7 @@ Nazara, Suahasil & Guo, Dong & Hewings, Geoffrey J.D., & Dridi, Chokri, 2003. \e
 \author{
 Ignacio Sarmiento-Barbieri
 }
-\note{
-%%  ~~further notes~~
-}
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 
 mip<-mat_40x40[1:40,2:41] #Input-output coeffcients

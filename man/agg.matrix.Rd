@@ -1,18 +1,17 @@
 \name{agg.matrix}
 \alias{agg.matrix}
-%- Also NEED an '\alias' for EACH other topic documented here.
-\title{
-Aggregation Matrix
-}
+
+\title{Aggregation Matrix}
+
 \description{
-Aggregates Inpuy-Output Matrices. Construct an agregation matrix of kxn dimension. 
+Aggregates Input-Output Matrices. Construct an aggregation matrix of kxn dimension. 
 }
 \usage{
 agg.matrix(mat,d.mip)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{mat}{Matrix. How sectors should be agregated. First column should be the new sector in order, the remaining columns the sectors that are going to be agregated}
+  \item{mat}{Matrix. How sectors should be aggregated. First column should be the new sector in order, the remaining columns the sectors that are going to be aggregated}
   \item{dimcol}{Numeric. Column dimension}
 }
 

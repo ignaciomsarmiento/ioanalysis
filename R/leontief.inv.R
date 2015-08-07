@@ -1,4 +1,4 @@
-leontief.inv<-function(mip, X, linkages=TRUE, write.xlsx=FALSE, name="Leontief_Inv.xlsx"){
+"leontief.inv"<-function(mip, X, linkages=TRUE, write.xlsx=FALSE, name="Leontief_Inv.xlsx"){
   #Leontief inverse (domestic) is defined as
   #(I-Ad)^{-1} 
   #where Ad is the input coefficient matrix of domestic transactions. 
