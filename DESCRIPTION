@@ -6,7 +6,7 @@ Authors@R: person("Ignacio", "Sarmiento-Barbieri", email = "srmntbr2@illinois.ed
 Author: Ignacio Sarmiento-Barbieri
 Maintainer: Ignacio Sarmiento-Barbieri <srmntbr2@illinois.edu>
 Description: Input and Output Analysis. 
-Depends: R (>= 3.1.1), ggplot2, xlsx
+Depends: R (>= 3.1.1), ggplot2, xlsx, Matrix
 License: GNU GENERAL PUBLIC LICENSE
 LazyData: true
  
