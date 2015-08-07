@@ -29,7 +29,7 @@ upstream(linv,y,x,m, write.xlsx=TRUE, name="Upstream.xlsx")
 %% ...
 }
 \references{
-Pol Antràs & Davin Chor & Thibault Fally & Russell Hillberry, 2012. "Measuring the Upstreamness of Production and Trade Flows," NBER Working Papers 17819, National Bureau of Economic Research, Inc.
+Pol Antràs & Davin Chor & Thibault Fally & Russell Hillberry, 2012. \emph{Measuring the Upstreamness of Production and Trade Flows," NBER Working Papers 17819, National Bureau of Economic Research, Inc.
 }
 \author{
 Ignacio Sarmiento-Barbieri
@@ -55,5 +55,3 @@ function (x)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

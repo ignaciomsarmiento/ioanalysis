@@ -8,3 +8,6 @@ agg.matrix<-function(mat,dimcol){
   }
   s
 }
+
+
+

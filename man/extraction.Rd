@@ -31,7 +31,7 @@ Returns a matrix with the Extraction matrix
 \references{
 Dietzenbacher Erik & van der Linden Jan A. &  Steenge Alben E.  (1993). \emph{The Regional Extraction Method: EC Input–Output Comparisons}. Economic Systems Research. Vol. 5, Iss. 2, 1993
 
-Nazara, Suahasil & Guo, Dong & Hewings, Geoffrey J.D., & Dridi, Chokri, 2003. "PyIO. Input-Output Analysis with Python". REAL Discussion Paper 03-T-23. University of Illinois at Urbana-Champaign. (\url{http://www.real.illinois.edu/d-paper/03/03-T-23.pdf})
+Nazara, Suahasil & Guo, Dong & Hewings, Geoffrey J.D., & Dridi, Chokri, 2003. \emph{PyIO. Input-Output Analysis with Python}. REAL Discussion Paper 03-T-23. University of Illinois at Urbana-Champaign. (\url{http://www.real.illinois.edu/d-paper/03/03-T-23.pdf})
 }
 \author{
 %%  ~~who you are~~
@@ -62,5 +62,5 @@ extraction(mip,X,f, v,forward=FALSE,write.xlsx=FALSE, name="Extraction.xlsx")
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ extraction }
+
 

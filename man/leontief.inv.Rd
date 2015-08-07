@@ -40,7 +40,8 @@ The sector j's Forward Linkage (\eqn{FL_{i}}) is defined as:
 Returns a data.frame with the Leontief Inverse
 }
 \references{
-Nazara, Suahasil & Guo, Dong & Hewings, Geoffrey J.D., & Dridi, Chokri, 2003. "PyIO. Input-Output Analysis with Python". REAL Discussion Paper 03-T-23. University of Illinois at Urbana-Champaign. (\url{http://www.real.illinois.edu/d-paper/03/03-T-23.pdf})
+Nazara, Suahasil & Guo, Dong & Hewings, Geoffrey J.D., & Dridi, Chokri, 2003. \emph{PyIO. Input-Output Analysis with Python}. REAL Discussion Paper 03-T-23. University of Illinois at Urbana-Champaign. (\url{http://www.real.illinois.edu/d-paper/03/03-T-23.pdf})
+
 }
 \author{
 Ignacio Sarmiento-Barbieri
@@ -65,5 +66,5 @@ L<-leontief.inv(mip,X,linkages=TRUE,write.xlsx = FALSE)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ leontief inverse }
+
 

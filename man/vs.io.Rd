@@ -31,7 +31,7 @@ vs.io(imp,exp,leon=1,namesector, write.xlsx=TRUE, name="Level_Verticalization.xl
   Returns a data frame with the A*L*X product, the total exports and the level of verticalization for each sector. Total.exp. returns a scalar, equals to the sum of exports across sectors
 }
 \references{
-Hummels, David & Ishii, Jun & Yi, Kei-Mu, 2001. "The nature and growth of vertical specialization in world trade," Journal of International Economics, Elsevier, vol. 54(1), pages 75-96, June.
+Hummels, David & Ishii, Jun & Yi, Kei-Mu, 2001. \emph{The nature and growth of vertical specialization in world trade}. Journal of International Economics, Elsevier, vol. 54(1), pages 75-96, June.
 }
 \author{
 Ignacio Sarmiento-Barbieri
@@ -67,5 +67,5 @@ hum2<-vs.io(imp,exp,namesector,leon=leon, write.xlsx=FALSE)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ vs }
+
 

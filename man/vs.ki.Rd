@@ -27,7 +27,7 @@ The dimension of the four arguments must coincide.
 Returns a data frame
 }
 \references{
-Hummels, David & Ishii, Jun & Yi, Kei-Mu, 2001. "The nature and growth of vertical specialization in world trade," Journal of International Economics, Elsevier, vol. 54(1), pages 75-96, June.
+Hummels, David & Ishii, Jun & Yi, Kei-Mu, 2001. \emph{The nature and growth of vertical specialization in world trade}. Journal of International Economics, Elsevier, vol. 54(1), pages 75-96, June.
 }
 \author{
 Ignacio Sarmiento-Barbieri
@@ -53,5 +53,4 @@ function (x)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+

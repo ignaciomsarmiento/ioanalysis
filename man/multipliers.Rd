@@ -84,7 +84,5 @@ z<-c(29870.9,18720,66563.8,2607,19007.7,69883,10194.2,173.1)
 L<-multipliers(mip=mip,X=X,z=z,e=e)
 
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ multipliers }
+
 
