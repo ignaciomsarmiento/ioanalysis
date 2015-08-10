@@ -13,7 +13,7 @@ leontief.inv(mip, X, linkages=TRUE, write.xlsx=TRUE, name="Leontief_Inv.xlsx")
   \item{mip}{Matrix. Input output matrix}
   \item{X}{Vector. Input in each column}
   \item{linkages}{Logical. If TRUE computes Backward and Forward Linkages}
-  \item{write.xlsx}{Logical. If TRUE writes an excel file}
+  \item{write.xlsx}{Logical. If TRUE results are presented in an excel file}
   \item{name}{String. Name of the excel file}
 }
 
@@ -21,7 +21,7 @@ leontief.inv(mip, X, linkages=TRUE, write.xlsx=TRUE, name="Leontief_Inv.xlsx")
 The Leontief inverse is derived from the input-output table A=[a_ij] where
 \deqn{a_ij=z_ij/X_j} 
 
-where z_ij is the input from i required in the production of j. X_j is the corresponding input in each coulumn. The Leontief inverse is then computed as 
+where z_ij is the input from i required in the production of j. X_j is the corresponding input in each column. The Leontief inverse is then computed as 
 \deqn{(I-A)^{-1}}
 
 The user has the option to compute the Backward and Forward Linkages for Key-sector Analysis. The sector j's Backward Linkage (\eqn{BL_{j}}) is defined as:
@@ -49,7 +49,7 @@ Ignacio Sarmiento-Barbieri
 
 \examples{
 
-mip<-mat_40x40[1:40,2:41] #Input-output coeffcients
+mip<-mat_40x40[1:40,2:41] #Input-output coefficients
 
 X<-mat_40x40$DT.a.PB[1:40]  #Total output vector
 
