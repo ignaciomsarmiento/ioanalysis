@@ -6,24 +6,24 @@ Multiplier Analysis
 }
 \description{
 
-According to Nazara et al. (2003) and  Blair and Miller (2009) four multipliers can be calculated from an input-output matrix: output multiplier, input multiplier, income multiplier and employment multiplier.
+According to Nazara et al. (2003) and  Blair and Miller (2009), at least four multipliers can be calculated from an input-output matrix: (i) output multiplier, (ii) input multiplier, (iii) income multiplier and (iv) employment multiplier.
 
-Output multiplier: it is computed from the Leontief inverse.   Let \deqn{B=[b_{ij}]} be the Leontief inverse matrix  the output multiplier for sector j, 
+(i) Output multiplier: it is computed from the Leontief inverse.   Let \deqn{B=[b_{ij}]} be the Leontief inverse matrix, then the output multiplier for sector j is 
 
 \deqn{O_{j}=\sum_{i=1}^{n}b_{ij}}
 
-Input multiplier: it is computed from the Goshian inverse.  Let \deqn{G=[g_{ij}]} be the Goshian inverse matrix  the input multiplier for sector j,
+(ii) Input multiplier: it is computed from the Goshian inverse.  Let \deqn{G=[g_{ij}]} be the Goshian inverse matrix  the input multiplier for sector j,
 
 \deqn{I_{j}=\sum_{i=1}^{n}g_{ij}}
 
-Income multiplier: the calculation of this multiplier requires a wage vector (z) to calculate the household input coefficient (a):
+I(iii) ncome multiplier: the calculation of this multiplier requires a wage vector (z) to calculate the household input coefficient (a):
 \deqn{a_{n+1,i}=\frac{z_{n+1,i}}{X_{i}}}
 
 with the Leontief inverse, the household income multiplier for sector j is
 
 \deqn{H_{j}=\sum_{i=1}^{n}a_{n+1,i}b_{ij}}
 
-Employment multiplier: the calculation of this multiplier requires a sectoral employment vector (e) to calculate the labor input coefficient (w):
+(iv) Employment multiplier: the calculation of this multiplier requires a sectoral employment vector (e) to calculate the labor input coefficient (w):
 \deqn{w_{n+1,i}=\frac{e_{i}}{X_{i}}}{ w_(n+1,i)=e_i / X_i}
 
 with the Leontief inverse, the employment  multiplier for sector j is
@@ -39,9 +39,9 @@ multipliers(mip, X, z, e,write.xlsx=TRUE, name="output_multiplier.xlsx")
 \arguments{
   \item{mip}{Input-output matrix}
   \item{X}{Vector. Total input or output}
-  \item{z}{Vector. Household input coefficient}
-  \item{e}{Vector. If TRUE identifies key sectors}
-  \item{write.xlsx}{Logical. If TRUE writes an excel file}
+  \item{z}{Vector. Household wage to calculate household input coefficient}
+  \item{e}{Vector. Sectoral employment to calculate labor input coefficient}
+  \item{write.xlsx}{Logical. If TRUE results are presented in an excel file}
   \item{name}{String. Name of the excel file}
 %%     ~~Describe \code{x} here~~
 }
