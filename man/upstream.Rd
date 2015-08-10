@@ -4,7 +4,7 @@
 \title{upstreamness
 }
 \description{
-Measures upstreamness as of equation 9 in Antras et al. (2012)
+Measures upstreamness as in Antràs et al. (2012), equation (9) page 5.
 }
 \usage{
 upstream(linv,y,x,m, write.xlsx=TRUE, name="Upstream.xlsx")
@@ -13,10 +13,10 @@ upstream(linv,y,x,m, write.xlsx=TRUE, name="Upstream.xlsx")
 %- maybe also 'usage' for other objects documented here.
 \arguments{
    \item{linv}{Matrix. Input output matrix}
-  \item{y}{Output Vector}
-  \item{x}{Exports Vector}
-  \item{m}{Imports Vector}
-  \item{write.xlsx}{Logical. if TRUE writes an excel file}
+  \item{y}{Vector. Output}
+  \item{x}{Vector. Exports}
+  \item{m}{Vector. Imports}
+  \item{write.xlsx}{Logical. if TRUE results are presented in an excel file}
   \item{name}{String. name of the excel file}
 }
 \details{
@@ -38,5 +38,6 @@ Ignacio Sarmiento-Barbieri
 }
 
 \examples{
+##---TBC
 }
 
