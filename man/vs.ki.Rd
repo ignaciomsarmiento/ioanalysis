@@ -4,7 +4,7 @@
 \title{Vertical Specialization
 }
 \description{
-VS is the imported input content of exports for country k in sector i. The Vertical specialization chain is VS_ki=(imported intermediats/gross output)*exports. The first term is the share of imported inputs into gross production. Multiplying this ratio by the amount that iseported provides the monetary value for the imported input content of exports.
+VS is the imported input content of exports for country k in sector i. The Vertical specialization chain is VS_ki=(imported intermediates/gross output)*exports. The first term is the share of imported inputs into gross production. Multiplying this ratio by the amount that is exported provides the monetary value for the imported input content of exports.
 
 }
 \usage{
@@ -16,7 +16,7 @@ vs.ki(imp,exp,out,namesector, write.xlsx=TRUE, name="Level_Verticalization.xlsx"
   \item{exp}{Vector. Exports}
   \item{out}{Vector. Gross Output}
   \item{namesector}{String. Name of Sector i}
-  \item{write.xlsx}{Logical. if TRUE writes an excel file}
+  \item{write.xlsx}{Logical. if TRUE results are presented in an excel file}
   \item{name}{String. name of the excel file}
 }
 
