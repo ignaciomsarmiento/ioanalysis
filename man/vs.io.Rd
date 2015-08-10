@@ -8,7 +8,7 @@ VS share of total exports
 
 Vertical Specialization (VS) share of total exports. The formula for VS as a share fo total exports for country k is
 \deqn{VS\; share\; of\; total\; exports= \frac{VS}{X_{k}}=\frac{A*L*X}{X_{k}}}
-where A is the nxn imported coefficient matrix,L is the Leontief inverse, X is an nx1 vector of exports, n is the number of secotrs, adn Xk is the sum of exports across the n sectors. 
+where A is the nxn imported coefficient matrix,L is the Leontief inverse, X is an nx1 vector of exports, n is the number of sectors, and Xk is the sum of exports across the n sectors. 
 }
 \usage{
 vs.io(imp,exp,leon=1,namesector, write.xlsx=TRUE, name="Level_Verticalization.xlsx")
@@ -16,10 +16,10 @@ vs.io(imp,exp,leon=1,namesector, write.xlsx=TRUE, name="Level_Verticalization.xl
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{imp}{Is the nxn imported coefficient matrix}
-  \item{exp}{Numeric Vector. Exports}
+  \item{exp}{Numerical Vector. Exports}
   \item{leon}{Leontief Inverse as output of funciton leontief.inv()}
   \item{namesector}{Character. Name of Sector i}
-  \item{write.xlsx}{Logical. if TRUE writes an excel file}
+  \item{write.xlsx}{Logical. if TRUE results are presented in an excel file}
   \item{name}{String. name of the excel file}
 %%     ~~Describe \code{x} here~~
 }
