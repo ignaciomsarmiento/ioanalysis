@@ -1,9 +1,11 @@
 Package: ioanalysis
 Title: Input-Output Analysis
 Version: 0.1
-Authors@R: person("Ignacio", "Sarmiento-Barbieri", email = "srmntbr2@illinois.edu",
-  role = c("aut", "cre")) 
-Author: Ignacio Sarmiento-Barbieri
+Authors@R: c(person("Ignacio", "Sarmiento-Barbieri", email = "srmntbr2@illinois.edu",
+  role = c("aut", "cre")), person("Emilio", "Blanco", email = "emiliofblanco@gmail.com",
+  role = c("ctb")), person("Pedro", "Elosegui", email = "pelosegui@bcra.gob.ar",
+  role = c("ctb"))) 
+Author: Ignacio Sarmiento-Barbieri [aut, cre], Emilio Blanco [ctb], Pedro Elosegui [ctb]
 Maintainer: Ignacio Sarmiento-Barbieri <srmntbr2@illinois.edu>
 Description: Input and Output Analysis. 
 Depends: R (>= 3.1.1), ggplot2, xlsx, Matrix
