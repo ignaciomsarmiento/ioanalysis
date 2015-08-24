@@ -23,13 +23,19 @@ output.decomposition(mip0, mip1,X0, X1,f0,f1, write.xlsx=FALSE, name="Output_Dec
 }
 
 \details{
- The output matrix will have nine columns identified as "Decom_1","Decom_2","Decom_3","Self_Ch_1","Self_Ch_2","Self_Ch_3","Non_Self_Ch_1","Non_Self_Ch_2","Non_Self_Ch_3". 
-  \item{"Decom_1"}{Refers to output changes that are due to changes in final demand}
-  \item{"Decom_2"}{Refers to output changes that are due to technological progress (i.e., due to changes in the Leontief inverse matrices_)}
-  \item{"Decom_3"}{Refers to output changes that are due to synergistic interaction between final demand and technological change}
-  Further, the decomposition can be made to trace the output changes by determining whether they originated from the sector itself or from other sectors in the economy. The two components are referred to as \italic{self-generated} and \italic{non-self-generated}
-  \item{"Self_Ch_1", "Self_Ch_2", "Self_Ch_3"}{Refers to output changes that are self-generated}
-  \item{"Non_Self_Ch_1", "Non_Self_Ch_2", "Non_Self_Ch_3"}{Refers to output changes that are non-self-generated}
+ The output matrix will have nine columns identified as "Decom_1","Decom_2","Decom_3","Self_Ch_1",
+ "Self_Ch_2","Self_Ch_3","Non_Self_Ch_1","Non_Self_Ch_2","Non_Self_Ch_3". 
+ \itemize{
+  \item{"Decom_1"}{ Refers to output changes that are due to changes in final demand}
+  \item{"Decom_2"}{ Refers to output changes that are due to technological progress (i.e., due to changes in the Leontief inverse matrices_)}
+  \item{"Decom_3"}{ Refers to output changes that are due to synergistic interaction between final demand and technological change}
+  }
+  
+  Further, the decomposition can be made to trace the output changes by determining whether they originated from the sector itself or from other sectors in the economy. The two components are referred to as \emph{self-generated} and \emph{non-self-generated}
+  \itemize{
+  \item{"Self_Ch_1", "Self_Ch_2", "Self_Ch_3"}{ Refers to output changes that are self-generated}
+  \item{"Non_Self_Ch_1", "Non_Self_Ch_2", "Non_Self_Ch_3"}{ Refers to output changes that are non-self-generated}
+  }
 }
 \value{
 Returns a matrix.

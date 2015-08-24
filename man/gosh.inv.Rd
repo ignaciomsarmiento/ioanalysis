@@ -43,7 +43,7 @@ mip<-mat_40x40[1:40,2:41] #Input-output coeffcients
 
 X<-mat_40x40$DT.a.PB[1:40]  #Total output vector
 
-G<-gosh.inv(mip,X,linkages=TRUE,write.xlsx = FALSE)
+G<-gosh.inv(mip,X,write.xlsx = FALSE)
 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
