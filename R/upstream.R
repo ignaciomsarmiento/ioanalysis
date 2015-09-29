@@ -3,7 +3,7 @@ upstream<-function(mip,y,x,m, write.xlsx=TRUE, name="Upstream.xlsx"){
   nosect<-dim(mip)[1]
   limp<-(mip/y)
   w<-y/(y-x+m)
-  dij<-linv*w
+  dij<-mip*w
   d.inv<-solve(diag(nosect)-dij)
   u<-cbind(rep(1,nosect))
   U<-d.inv%*%u
