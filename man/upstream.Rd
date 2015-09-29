@@ -7,12 +7,12 @@
 Measures upstreamness as in Antràs et al. (2012), equation (9) page 5.
 }
 \usage{
-upstream(linv,y,x,m, write.xlsx=TRUE, name="Upstream.xlsx")
+upstream(mip,y,x,m, write.xlsx=TRUE, name="Upstream.xlsx")
 }
 
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-   \item{linv}{Matrix. Input output matrix}
+   \item{mip}{Matrix. Input output matrix}
   \item{y}{Vector. Output}
   \item{x}{Vector. Exports}
   \item{m}{Vector. Imports}

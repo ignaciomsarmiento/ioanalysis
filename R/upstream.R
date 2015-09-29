@@ -1,5 +1,5 @@
 upstream<-function(mip,y,x,m, write.xlsx=TRUE, name="Upstream.xlsx"){
-  if(class(linv)!="data.frame")stop("Should be element of a data.frame class")
+  if(class(mip)!="data.frame")stop("Should be element of a data.frame class")
   nosect<-dim(mip)[1]
   limp<-(mip/y)
   w<-y/(y-x+m)
