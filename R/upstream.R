@@ -1,7 +1,7 @@
 upstream<-function(mip,y,x,m, write.xlsx=TRUE, name="Upstream.xlsx"){
-  if(class(mip)!="data.frame")stop("Should be element of a data.frame class")
+  if(class(mip)!="matrix") mip<-as.matrix(mip)
   nosect<-dim(mip)[1]
-  limp<-(mip/y)
+  mip<-(mip/y)
   w<-y/(y-x+m)
   dij<-mip*w
   d.inv<-solve(diag(nosect)-dij)
