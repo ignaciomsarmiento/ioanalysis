@@ -20,7 +20,7 @@ extraction(mip, X, f, v, forward=FALSE, write.xlsx=FALSE, name="Extraction.xlsx"
   \item{name}{String. Name of the excel file}
 }
 \details{
-The matrix should be read cautiously. Columns indicate the sector under analysis. So the first column gives teh impact when sector 1 is hypthetically extracted from the system. Thus A[1,1] is the impact to sector 1 when that sector is hypothetically extracted. A[1,2] gives the impact to sector 1 when sector 2 was hypothetically extracted.
+The matrix should be read cautiously. Columns indicate the sector under analysis. So the first column gives the impact when sector 1 is hypthetically extracted from the system. Thus A[1,1] is the impact to sector 1 when that sector is hypothetically extracted. A[1,2] gives the impact to sector 1 when sector 2 was hypothetically extracted.
 A[2,1] represents the impact to sector 2 when sector 1 is hypothetically extracted and so on.
 
 The diagonal of the output matrix represents Dietzenbacher's feedback effect.

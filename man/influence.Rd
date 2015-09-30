@@ -1,5 +1,5 @@
 \name{influence}
-\alias{influnce}
+\alias{influence}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Field of Influence
