@@ -42,14 +42,14 @@ Ignacio Sarmiento-Barbieri
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
 
-## The function is currently defined as
-function (x) 
-{
-  }
+y<-mat_40x40$DT.a.PB[1:40]
+x<-mat_40x40$X[1:40]
+m<-mat_40x40[42,2:41]
+
+
+vs<-vs.ki(m,x,y, write.xlsx=FALSE)
+
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
