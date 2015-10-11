@@ -25,7 +25,7 @@ key.sector(mip, X, epsilon=0.1, key=TRUE, cutoff=1, write.xlsx=TRUE, name="Key_s
 \arguments{
   \item{mip}{Input-output matrix}
   \item{X}{Total input or output}
-  \item{epsilon}{Replaces zeros in X}
+  \item{dietz}{Logical. If TRUE uses Dietzenbacher (1991) eigenvalues method}
   \item{key}{Logical. If TRUE identifies key sectors}
   \item{cutoff}{Numerical above cutoff level sectors are considered as key sectors}
   \item{write.xlsx}{Logical. If TRUE results are presented in an excel file}
@@ -41,6 +41,8 @@ The function uses the sector names from the column names on the Input-output mat
 }
 \references{
 Nazara, Suahasil & Guo, Dong & Hewings, Geoffrey J.D., & Dridi, Chokri, 2003. "PyIO. Input-Output Analysis with Python". REAL Discussion Paper 03-T-23. University of Illinois at Urbana-Champaign. (\url{http://www.real.illinois.edu/d-paper/03/03-T-23.pdf})
+
+Dietzenbacher, E. 1992. "The measurement of interindustry linkages: key sectors in the Netherlands". Economic Modelling, 9(4), 419-437.
 }
 \author{
 Ignacio Sarmiento-Barbieri
