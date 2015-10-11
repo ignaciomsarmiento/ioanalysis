@@ -73,7 +73,7 @@ extraction<-function(mip, X, f, v, forward=FALSE, write.xlsx=FALSE, name="Extrac
     A<-cbind(A,newcol)
     A<-as.matrix(A)
     A[s,s]<-1/(1-(mip[s,s]/X[s]))
-    z[,s]<-v%*%(L-A)
+    z[,s]<-(L-A)%*%v
     if(write.xlsx==TRUE) write.xlsx2(z, file=name, sheetName="Forward Linkage", showNA=TRUE)
     z
   }
