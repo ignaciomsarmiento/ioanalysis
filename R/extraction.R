@@ -61,7 +61,7 @@ extraction<-function(mip, X, f, v, forward=FALSE, write.xlsx=FALSE, name="Extrac
       A<-insertCol(A,newcol,s)
       A<-as.matrix(A)
       A[s,s]<-1/(1-(mip[s,s]/X[s]))
-      z[,s]<-v%*%(L-A)
+      z[,s]<-(L-A)%*%v
       z
     }
     #For the last sector

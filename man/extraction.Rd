@@ -16,6 +16,7 @@ extraction(mip, X, f, v, forward=FALSE, write.xlsx=FALSE, name="Extraction.xlsx"
   \item{X}{Vector. Input in each column}
   \item{f}{Vector. Final demand vector}
   \item{v}{Vector. Primary input vector}
+  \item{forward}{Logical. If TRUE computes the extraction method in terms of the forward linkage}
   \item{write.xlsx}{Logical. If TRUE writes an excel file}
   \item{name}{String. Name of the excel file}
 }
@@ -26,7 +27,7 @@ A[2,1] represents the impact to sector 2 when sector 1 is hypothetically extract
 The diagonal of the output matrix represents Dietzenbacher's feedback effect.
 }
 \value{
-Returns a matrix with the Extraction matrix
+Returns a matrix with the extraction matrix in terms of the backward linkages or the forward linkages
 }
 \references{
 Dietzenbacher Erik & van der Linden Jan A. &  Steenge Alben E.  (1993). \emph{The Regional Extraction Method: EC Input–Output Comparisons}. Economic Systems Research. Vol. 5, Iss. 2, 1993
@@ -49,13 +50,14 @@ Nazara, Suahasil & Guo, Dong & Hewings, Geoffrey J.D., & Dridi, Chokri, 2003. \e
 
 #Follows the example in PyIO 2.0 Quick Start
 
-mip<-matrix(c(16,5,24,0,6,17,10,0,7,17,11,48,26,0,8,0,43,82,33,13,17,81,51,4,35,9,93,7,19,99,30,2,19,20,19,6,59,16,16,0,15,15,99,45,66,11,12,7,25,22,47,4,42,26,45,1,0,0,75,0,12,7,12,3), ncol=8, byrow=TRUE)
-mip
+mip<-matrix(c(16,5,24,0,6,17,10,0,7,17,11,48,26,0,8,0,43,
+              82,33,13,17,81,51,4,35,9,93,7,19,99,30,2,19,
+              20,19,6,59,16,16,0,15,15,99,45,66,11,12,7,25,
+              22,47,4,42,26,45,1,0,0,75,0,12,7,12,3), ncol=8, byrow=TRUE)
 
 X<-c(700,320,607,432,375,345,561,187)
-
-
 f<-c(622,203,283,138,220,75,349,78)
+v<-c(540,150,206,309,128,88,377,170)
 
 extraction(mip,X,f, v,forward=FALSE,write.xlsx=FALSE, name="Extraction.xlsx")
 
