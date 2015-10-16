@@ -29,7 +29,7 @@ key.sector(mip, X, epsilon=0.1, key=TRUE, cutoff=1, write.xlsx=TRUE, name="Key_s
   \item{key}{Logical. If TRUE identifies key sectors}
   \item{cutoff}{Numerical above cutoff level sectors are considered as key sectors}
   \item{write.xlsx}{Logical. If TRUE results are presented in an excel file}
-  \item{name}{String. Name of the excel file}
+  \item{...}{Arguments to be passed to the write.xlsx function}
 %%     ~~Describe \code{x} here~~
 }
 
